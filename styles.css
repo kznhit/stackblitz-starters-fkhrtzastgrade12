@@ -1,19 +1,127 @@
-.correct {
-  background-color: #4caf50;
-  color: white;
+/* خلفية داكنة مع ألوان مريحة للعين */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1c1c1c; /* خلفية داكنة */
+  color: #e0e0e0; /* نص فاتح */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%; /* تأكيد أن الصفحة تشغل المساحة الكاملة */
+  display: flex;
+  flex-direction: column; /* ترتيب المحتوى عموديًا */
+  justify-content: space-between; /* ضمان أن العناصر تتوزع بشكل صحيح */
 }
 
-.incorrect {
-  background-color: #f44336;
-  color: white;
+/* تنسيق القوائم */
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.answer {
+ul li {
+  margin: 10px 0; /* تقليل المسافات بين العناصر */
+}
+
+ul li a {
+  display: block;
+  background-color: #4caf50; /* خلفية زر أخضر هادئ */
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 10px;
+  width: 250px;
+  margin: 0 auto; /* محاذاة الأزرار إلى الوسط */
+  transition: background-color 0.3s ease; /* تأثير عند التمرير */
+}
+
+ul li a:hover {
+  background-color: #388e3c; /* تغيير اللون إلى الأخضر الداكن عند التمرير */
+}
+
+/* تنسيق العناوين */
+header h1 {
+  color: #ff9800; /* لون برتقالي دافئ */
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+
+header p {
+  color: #fff;
+  font-size: 1.2em;
   margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
 }
 
-button {
-  margin: 10px;
+/* تنسيق الأسئلة */
+.question {
+  font-size: 1.5em;
+  margin: 10px 0; /* تقليل المسافات حول السؤال */
+  padding: 10px;
+  text-align: center;  /* محاذاة النص في منتصف الصفحة */
+  width: 100%;
+  word-wrap: break-word;  /* إذا كان النص طويلًا جدًا، ينكسر ليظهر في السطر التالي */
+  direction: rtl; /* جعل النص يظهر من اليمين لليسار */
+}
+
+.question span {
+  direction: ltr;
+  display: inline-block;
+  font-weight: bold;  /* جعل النص الإنجليزي غامقًا */
+}
+
+/* تنسيق الأزرار */
+.options {
+  display: flex;
+  justify-content: center; /* ترتيب الأزرار في وسط الصفحة */
+  gap: 20px; /* المسافة بين الأزرار */
+  flex-wrap: wrap; /* إذا كان هناك أزرار كثيرة، ستنتقل إلى السطر التالي */
+  margin-top: 10px; /* تقليل المسافات بين الأزرار */
+}
+
+.option {
+  background-color: #4caf50; /* زر أخضر هادئ */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 120px;
+  text-align: center;
+  transition: background-color 0.3s ease; /* تأثير التغيير عند التمرير */
+}
+
+.option:hover {
+  background-color: #388e3c; /* تغيير اللون إلى الأخضر الداكن عند التمرير */
+}
+
+/* تنسيق النتيجة */
+#result {
+  margin-top: 10px; /* تقليل المسافة بين النتيجة والأسئلة */
+  font-size: 1.5em;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* زر العودة إلى الصفحة الرئيسية */
+#backToHome button {
+  margin-top: 10px; /* تقليل المسافة */
+  padding: 10px 20px;
+  background-color: #ff9800; /* اللون البرتقالي الدافئ */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+#backToHome button:hover {
+  background-color: #fb8c00;
+}
+
+/* تنسيق الفوتر */
+footer {
+  margin-top: 20px;
+  color: #bbb;
+  padding: 10px;
 }
