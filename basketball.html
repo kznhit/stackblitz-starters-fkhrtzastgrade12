@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لعبة كرة سلة</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    #court { width: 600px; height: 400px; background-color: #444; margin: 20px auto; position: relative; overflow: hidden; }
+    .ball { width: 20px; height: 20px; background-color: orange; border-radius: 50%; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+    .hoop { width: 60px; height: 10px; background-color: #ddd; position: absolute; top: 60px; right: 100px; }
+    #score { color: #fff; font-size: 20px; margin: 10px 0; }
+    p { margin: 10px 0; }
+    button { padding: 8px 16px; font-size: 1em; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header><h1>لعبة كرة سلة — قذف السلة</h1></header>
+  <div class="container">
+    <div id="score">النتيجة: 0</div>
+    <div id="court">
+      <div class="hoop" id="hoop"></div>
+      <div class="ball" id="ball"></div>
+    </div>
+    <p>اضغط على <strong>Space</strong> للقفز بالقذيفة نحو السلة.</p>
+    <p><button onclick="resetGame()">إعادة البداية</button></p>
+    <p><a href="index.html">العودة للصفحة الرئيسية</a></p>
+  </div>
+  <footer><p>ثالث ثانوي أ</p></footer>
+
+<script>
+  const ball = document.getElementById('ball');
+  const court = document.getElementById('court');
+  const hoop = document.getElementById('hoop');
+  const scoreEl = document.getElementById('score');
+  let score = 0, animating = false;
+
+  function shoot() {
+    if (animating) return;
+    animating = true;
+    let posY = ball.offsetTop;
+    let posX = ball.offsetLeft;
+    const startX = posX;
+    const startY = posY;
+    const hoopRect = hoop.getBoundingClientRect();
+    const courtRect = court.getBoundingClientRect();
+
+    let vy = -10; // سرعة رأسية مبدئية
+    let vx = (hoop.offsetLeft - startX) / 30; // توزيع أفقي تقريباً
+
+    let gravity = 0.5;
+
+    function frame() {
+      vy += gravity;
+      posY += vy;
+      posX += vx;
+      ball.style.top = posY + 'px';
+      ball.style.left = posX + 'px';
+
+      // تحقق من "سلة" — إذا الكرة دخلت نطاق الهوب تقريباً
+      if (posY <= hoop.offsetTop + 10 && posX > hoop.offsetLeft && posX < hoop.offsetLeft + hoop.offsetWidth) {
+        // تسجيل هدف
+        score++;
+        scoreEl.textContent = `النتيجة: ${score}`;
+        alert("سلة! 🏀");
+        animating = false;
+        return;
+      }
+
+      // إذا سقطت الكرة تحت الأرض — فشل
+      if (posY > court.offsetHeight) {
+        alert("أخطأت! حاول مرة أخرى.");
+        animating = false;
+        return;
+      }
+
+      requestAnimationFrame(frame);
+    }
+
+    frame();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.code === 'Space') {
+      shoot();
+    }
+  });
+
+  function resetGame() {
+    score = 0;
+    scoreEl.textContent = `النتيجة: ${score}`;
+    ball.style.top = '';
+    ball.style.left = '50%';
+    ball.style.transform = 'translateX(-50%)';
+    animating = false;
+  }
+</script>
+</body>
+</html>
