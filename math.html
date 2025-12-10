@@ -72,14 +72,18 @@
       let answersHTML = "";
       questions.forEach((question, index) => {
         answersHTML += `
-          <p><strong>السؤال ${index + 1}:</strong> ${question.question}</p>
-          <p><strong>إجابتك:</strong> ${question.userAnswer}</p>
-          <p><strong>الإجابة الصحيحة:</strong> ${question.correctAnswer}</p>
-          <p><strong>${question.userAnswer === question.correctAnswer ? 'إجابة صحيحة' : 'إجابة خاطئة'}</strong></p>
-          <hr/>
+          <div class="answer ${question.userAnswer === question.correctAnswer ? 'correct' : 'incorrect'}">
+            <p><strong>السؤال ${index + 1}:</strong> ${question.question}</p>
+            <p><strong>إجابتك:</strong> ${question.userAnswer}</p>
+            <p><strong>الإجابة الصحيحة:</strong> ${question.correctAnswer}</p>
+            <p><strong>${question.userAnswer === question.correctAnswer ? 'إجابة صحيحة' : 'إجابة خاطئة'}</strong></p>
+            <hr/>
+          </div>
         `;
       });
       document.getElementById('answers').innerHTML = answersHTML;
+      // تخزين الدرجة في localStorage
+      localStorage.setItem('mathScore', score);
     }
 
     displayQuestion();
