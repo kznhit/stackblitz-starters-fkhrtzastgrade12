@@ -33,10 +33,13 @@ header h1 {
 ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* إضافة التفاف للأزرار */
 }
 
 ul li {
-  margin: 20px 0; /* المسافة بين الخيارات */
+  margin: 10px; /* المسافة بين الأزرار */
 }
 
 ul li a {
@@ -46,8 +49,9 @@ ul li a {
   padding: 25px;
   font-size: 2.5em; /* تكبير النص داخل الأزرار */
   border-radius: 12px;
-  width: 350px;
-  margin: 0 auto; /* محاذاة الأزرار إلى المركز */
+  width: 150px; /* زيادة عرض الأزرار */
+  text-align: center;
+  margin: 10px; /* محاذاة الأزرار */
   transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير عند التمرير */
 }
 
