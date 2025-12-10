@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mathematics Questions</title>
+  <title>أسئلة رياضيات</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header>
-    <h1>Mathematics Questions</h1>
+    <h1>أسئلة رياضيات</h1>
   </header>
   <div class="container" id="questionContainer">
     <!-- سيتم عرض الأسئلة هنا -->
   </div>
   <div id="result"></div>
   <div id="backToHome">
-    <button onclick="window.location.href='index.html'">Back to Homepage</button>
+    <button onclick="window.location.href='index.html'">العودة إلى الصفحة الرئيسية</button>
   </div>
   <footer>
-    <p>Developed by Fares</p>
+    <p>تم تطوير اللعبة بواسطة فارس</p>
   </footer>
 
   <script>
@@ -39,7 +39,7 @@
       if (currentQuestionIndex < questions.length) {
         const question = questions[currentQuestionIndex];
         document.getElementById("questionContainer").innerHTML = `
-          <p>${question.question}</p>
+          <p class="question">${question.question}</p>
           <div class="options">
             ${question.options.map(option => `
               <button class="option" onclick="checkAnswer('${option}')">${option}</button>
