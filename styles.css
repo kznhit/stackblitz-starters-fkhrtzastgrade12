@@ -8,23 +8,28 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* محاذاة العناصر نحو الأعلى */
   align-items: center;
   height: 100vh; /* تأكد من أن الصفحة تملأ الشاشة */
   line-height: 1.6;
 }
 
 /* تنسيق العنوان الرئيسي */
+header {
+  margin-top: 20px;
+  padding: 10px;
+}
+
 header h1 {
   color: #ff9800; /* لون برتقالي دافئ */
-  font-size: 2.5em; /* حجم العنوان 2.5em */
-  margin-bottom: 20px;
+  font-size: 2em; /* تصغير حجم العنوان إلى 2em */
+  margin-bottom: 10px;
 }
 
 /* تنسيق الفقرة تحت العنوان */
 header p {
   color: #fff;
-  font-size: 1.8em; /* حجم النص تحت العنوان */
+  font-size: 1.5em; /* تصغير حجم النص تحت العنوان */
   margin-bottom: 30px;
 }
 
@@ -35,16 +40,16 @@ ul {
 }
 
 ul li {
-  margin: 15px 0; /* المسافة بين العناصر */
+  margin: 10px 0; /* تقليل المسافة بين العناصر */
 }
 
 ul li a {
   display: block;
   background-color: #4caf50; /* زر أخضر هادئ */
   color: white;
-  padding: 20px;
+  padding: 15px; /* تقليل حجم الحواف */
   text-decoration: none;
-  font-size: 2em; /* تكبير النص داخل الأزرار */
+  font-size: 1.8em; /* تصغير النص داخل الأزرار */
   border-radius: 12px;
   width: 250px;
   margin: 0 auto; /* محاذاة الأزرار إلى المركز */
@@ -56,66 +61,21 @@ ul li a:hover {
   transform: scale(1.05); /* تكبير الحجم عند التمرير */
 }
 
-/* تنسيق السؤال */
-.question-section {
-  margin-top: 30px;
-}
-
-.question {
-  font-size: 3.5em; /* تكبير حجم السؤال */
-  font-weight: bold;
-  color: #fff; /* لون النص أبيض */
-  margin-bottom: 30px;
-}
-
-/* تنسيق قائمة الخيارات */
-.options-container {
-  margin-top: 20px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li {
-  margin: 20px 0; /* المسافة بين العناصر */
-}
-
-.option {
-  background-color: #4caf50; /* زر أخضر هادئ */
-  color: white;
-  padding: 20px;
-  font-size: 2.5em; /* تكبير النص داخل الأزرار */
-  border-radius: 12px;
-  width: 300px;
-  margin: 0 auto; /* محاذاة الأزرار إلى المركز */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير عند التمرير */
-}
-
-.option:hover {
-  background-color: #388e3c; /* تغيير اللون إلى الأخضر الداكن عند التمرير */
-  transform: scale(1.05); /* تكبير الحجم عند التمرير */
-}
-
-/* تنسيق درجات المستخدم */
-.scores-section {
-  margin-top: 40px;
-}
-
+/* تنسيق الدرجات */
 #scores p {
-  font-size: 2em; /* تكبير حجم النص لعرض الدرجات */
+  font-size: 1.4em; /* تصغير حجم النص لعرض الدرجات */
   margin: 10px 0;
 }
 
+/* تنسيق زر إعادة تعيين الدرجات */
 #resetButton button {
   margin-top: 20px;
-  padding: 12px 25px;
+  padding: 10px 20px; /* تصغير حجم الزر */
   background-color: #ff9800; /* اللون البرتقالي الدافئ */
   color: white;
   border: none;
   border-radius: 10px;
-  font-size: 2em; /* تكبير حجم النص في الزر */
+  font-size: 1.6em; /* تصغير حجم النص في الزر */
   cursor: pointer;
 }
 
