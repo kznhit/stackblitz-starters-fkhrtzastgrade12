@@ -56,28 +56,6 @@ ul li a:hover {
   transform: scale(1.05); /* تكبير الحجم عند التمرير */
 }
 
-/* تنسيق الدرجات */
-#scores p {
-  font-size: 1.6em; /* تكبير حجم النص لعرض الدرجات */
-  margin: 10px 0;
-}
-
-/* تنسيق زر إعادة تعيين الدرجات */
-#resetButton button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background-color: #ff9800; /* اللون البرتقالي الدافئ */
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.8em; /* تكبير حجم النص في الزر */
-  cursor: pointer;
-}
-
-#resetButton button:hover {
-  background-color: #fb8c00; /* اللون البرتقالي الداكن عند التمرير */
-}
-
 /* تنسيق الإجابات الصحيحة */
 .correct-answer {
   color: #4caf50; /* أخضر */
