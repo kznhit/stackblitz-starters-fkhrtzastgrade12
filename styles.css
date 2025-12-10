@@ -1,64 +1,111 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Game</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <header>
-    <h1>هلا والله اقلط اقلط</h1>
-    <p>اختر القسم اللي تبي تختبر طال عمرك:</p>
-  </header>
+/* تنسيق عام للجسم */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000000; /* خلفية سوداء */
+  color: #ffffff; /* نص أبيض */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* تأكد من أن الصفحة تملأ الشاشة */
+  line-height: 1.6;
+}
 
-  <div class="container">
-    <ul>
-      <li><a class="math" href="math.html">أسئلة رياضيات</a></li>
-      <li><a class="religion" href="religion.html">أسئلة دينية</a></li>
-      <li><a class="soccer" href="soccer.html">أسئلة الدوري السعودي</a></li>
-    </ul>
+/* تنسيق العنوان */
+header h1 {
+  color: #ff9800; /* لون برتقالي للعناوين */
+  font-size: 2.5em; /* تصغير حجم العنوان */
+  margin-bottom: 20px;
+}
 
-    <h2>درجاتك:</h2>
-    <div id="scores">
-      <p>الدرجة في الرياضيات: <span id="mathScore">لم يتم الإجابة بعد</span></p>
-      <p>الدرجة في الأسئلة الدينية: <span id="religionScore">لم يتم الإجابة بعد</span></p>
-      <p>الدرجة في الدوري السعودي: <span id="soccerScore">لم يتم الإجابة بعد</span></p>
-    </div>
-    <div id="resetButton">
-      <button onclick="resetScores()">إعادة تعيين الدرجات</button>
-    </div>
-  </div>
+/* تنسيق السؤال */
+.question {
+  font-size: 3em; /* تكبير حجم السؤال */
+  font-weight: bold;
+  color: #ffffff; /* نص أبيض */
+  margin-bottom: 30px;
+}
 
-  <footer>
-    <p>تم تطوير اللعبة بواسطة فارس</p>
-  </footer>
+/* تنسيق قائمة الخيارات */
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* ترتيب الأزرار بشكل عمودي */
+  align-items: center;
+  gap: 20px; /* المسافة بين الأزرار */
+}
 
-  <script>
-    // قراءة الدرجات من localStorage عند تحميل الصفحة
-    function loadScores() {
-      document.getElementById("mathScore").textContent = localStorage.getItem('mathScore') || "لم يتم الإجابة بعد";
-      document.getElementById("religionScore").textContent = localStorage.getItem('religionScore') || "لم يتم الإجابة بعد";
-      document.getElementById("soccerScore").textContent = localStorage.getItem('soccerScore') || "لم يتم الإجابة بعد";
-    }
+ul li {
+  width: 80%; /* تأكد أن الأزرار تأخذ عرض كامل لكن بنسبة صغيرة */
+}
 
-    // استدعاء وظيفة تحميل الدرجات عند تحميل الصفحة
-    loadScores();
+ul li a {
+  display: block;
+  padding: 20px; /* تكبير الحجم */
+  font-size: 2em; /* تكبير حجم النص داخل الأزرار */
+  border-radius: 12px; /* جعل الأزرار أكثر تدويرًا */
+  width: 100%; /* جعل الأزرار تأخذ عرض كامل */
+  margin: 10px 0; /* المسافة بين الأزرار */
+  text-align: center;
+  text-transform: uppercase; /* تكبير الحروف وجعلها علوية */
+  font-weight: 700;
+  color: white; /* النص داخل الأزرار أبيض */
+  background-color: #ff9800; /* زر برتقالي */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* إضافة ظل خفيف حول الأزرار */
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التمرير */
+}
 
-    // وظيفة لإعادة تعيين الدرجات
-    function resetScores() {
-      // مسح الدرجات المخزنة في localStorage
-      localStorage.removeItem('mathScore');
-      localStorage.removeItem('religionScore');
-      localStorage.removeItem('soccerScore');
-      
-      // إعادة تعيين النصوص في الصفحة بعد مسح الدرجات
-      document.getElementById("mathScore").textContent = "لم يتم الإجابة بعد";
-      document.getElementById("religionScore").textContent = "لم يتم الإجابة بعد";
-      document.getElementById("soccerScore").textContent = "لم يتم الإجابة بعد";
-      
-      alert("تم إعادة تعيين الدرجات بنجاح!");
-    }
-  </script>
-</body>
-</html>
+/* تأثير التمرير */
+ul li a:hover {
+  background-color: #fb8c00; /* تغيير اللون إلى البرتقالي الداكن عند التمرير */
+  transform: translateY(-5px); /* رفع الزر قليلاً عند التمرير */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* زيادة الظل عند التمرير */
+}
+
+ul li a:active {
+  transform: scale(0.98); /* تقليص الزر عند الضغط */
+  box-shadow: none; /* إزالة الظل عند الضغط */
+}
+
+/* تنسيق الإجابة الصحيحة */
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+/* تنسيق الإجابة الخاطئة */
+.incorrect {
+  color: red;
+  font-weight: bold;
+}
+
+/* تنسيق الزر الخاص بالعودة إلى الصفحة الرئيسية */
+#backToHome {
+  margin-top: 40px;
+}
+
+#backToHome p {
+  font-size: 2.5em; /* تكبير النص */
+  color: #ff9800; /* نص برتقالي */
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase; /* تكبير الحروف وجعلها علوية */
+  text-shadow: 1px 1px 5px rgba(255, 152, 0, 0.7); /* إضافة ظل للنص */
+}
+
+#backToHome p:hover {
+  text-decoration: underline;
+  color: #fb8c00; /* تغيير اللون عند التمرير */
+}
+
+/* تنسيق الفوتر */
+footer {
+  margin-top: 30px;
+  color: #ffffff; /* نص أبيض في الفوتر */
+  padding: 10px;
+  font-size: 1.2em; /* تصغير حجم الخط في الفوتر */
+}
