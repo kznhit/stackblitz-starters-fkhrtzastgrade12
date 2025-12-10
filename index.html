@@ -23,6 +23,9 @@
       <p>الدرجة في الأسئلة الدينية: <span id="religionScore">لم يتم الإجابة بعد</span></p>
       <p>الدرجة في الدوري السعودي: <span id="soccerScore">لم يتم الإجابة بعد</span></p>
     </div>
+    <div id="resetButton">
+      <button onclick="resetScores()">إعادة تعيين الدرجات</button>
+    </div>
   </div>
   <footer>
     <p>تم تطوير اللعبة بواسطة فارس</p>
@@ -33,6 +36,21 @@
     document.getElementById("mathScore").textContent = localStorage.getItem('mathScore') || "لم يتم الإجابة بعد";
     document.getElementById("religionScore").textContent = localStorage.getItem('religionScore') || "لم يتم الإجابة بعد";
     document.getElementById("soccerScore").textContent = localStorage.getItem('soccerScore') || "لم يتم الإجابة بعد";
+
+    // وظيفة لإعادة تعيين الدرجات
+    function resetScores() {
+      // مسح الدرجات المخزنة في localStorage
+      localStorage.removeItem('mathScore');
+      localStorage.removeItem('religionScore');
+      localStorage.removeItem('soccerScore');
+      
+      // إعادة تعيين النصوص في الصفحة
+      document.getElementById("mathScore").textContent = "لم يتم الإجابة بعد";
+      document.getElementById("religionScore").textContent = "لم يتم الإجابة بعد";
+      document.getElementById("soccerScore").textContent = "لم يتم الإجابة بعد";
+      
+      alert("تم إعادة تعيين الدرجات بنجاح!");
+    }
   </script>
 </body>
 </html>
