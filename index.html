@@ -7,28 +7,18 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <!-- العنوان الرئيسي -->
   <header>
     <h1>هلا والله اقلط اقلط</h1>
     <p>اختر القسم اللي تبي تختبر طال عمرك:</p>
   </header>
   
-  <!-- السؤال -->
-  <div class="question-section">
-    <div class="question">ما هو الجذر التربيعي لـ 144؟</div>
-  </div>
-
-  <!-- خيارات الإجابة -->
-  <div class="options-container">
+  <div class="container">
     <ul>
-      <li><button class="option" onclick="checkAnswer(this, false)">10</button></li>
-      <li><button class="option" onclick="checkAnswer(this, true)">12</button></li>
-      <li><button class="option" onclick="checkAnswer(this, false)">14</button></li>
+      <li><a href="math.html">أسئلة رياضيات</a></li>
+      <li><a href="religion.html">أسئلة دينية</a></li>
+      <li><a href="soccer.html">أسئلة الدوري السعودي</a></li>
     </ul>
-  </div>
-  
-  <!-- درجات المستخدم -->
-  <section class="scores-section">
+
     <h2>درجاتك:</h2>
     <div id="scores">
       <p>الدرجة في الرياضيات: <span id="mathScore">لم يتم الإجابة بعد</span></p>
@@ -38,42 +28,36 @@
     <div id="resetButton">
       <button onclick="resetScores()">إعادة تعيين الدرجات</button>
     </div>
-  </section>
+  </div>
 
-  <!-- الفوتر -->
   <footer>
     <p>تم تطوير اللعبة بواسطة فارس</p>
   </footer>
 
-  <!-- السكربتات -->
   <script>
+    // قراءة الدرجات من localStorage عند تحميل الصفحة
     function loadScores() {
       document.getElementById("mathScore").textContent = localStorage.getItem('mathScore') || "لم يتم الإجابة بعد";
       document.getElementById("religionScore").textContent = localStorage.getItem('religionScore') || "لم يتم الإجابة بعد";
       document.getElementById("soccerScore").textContent = localStorage.getItem('soccerScore') || "لم يتم الإجابة بعد";
     }
+
+    // استدعاء وظيفة تحميل الدرجات عند تحميل الصفحة
     loadScores();
 
+    // وظيفة لإعادة تعيين الدرجات
     function resetScores() {
+      // مسح الدرجات المخزنة في localStorage
       localStorage.removeItem('mathScore');
       localStorage.removeItem('religionScore');
       localStorage.removeItem('soccerScore');
       
+      // إعادة تعيين النصوص في الصفحة بعد مسح الدرجات
       document.getElementById("mathScore").textContent = "لم يتم الإجابة بعد";
       document.getElementById("religionScore").textContent = "لم يتم الإجابة بعد";
       document.getElementById("soccerScore").textContent = "لم يتم الإجابة بعد";
       
       alert("تم إعادة تعيين الدرجات بنجاح!");
-    }
-
-    function checkAnswer(button, isCorrect) {
-      if (isCorrect) {
-        button.style.backgroundColor = "green";
-        alert("إجابة صحيحة!");
-      } else {
-        button.style.backgroundColor = "red";
-        alert("إجابة خاطئة!");
-      }
     }
   </script>
 </body>
