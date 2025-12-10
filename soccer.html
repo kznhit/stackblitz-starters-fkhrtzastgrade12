@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Religious Questions</title>
+  <title>Saudi Pro League Questions</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header>
-    <h1>Religious Questions</h1>
+    <h1>Saudi Pro League Questions</h1>
   </header>
   <div class="container" id="questionContainer">
     <!-- سيتم عرض الأسئلة هنا -->
@@ -23,41 +23,13 @@
 
   <script>
     const questions = [
-      {
-        question: "1. من هو النبي الذي ابتلعه الحوت؟",
-        options: ["يونس", "موسى", "إبراهيم", "عيسى"],
-        correctAnswer: "يونس"
-      },
-      {
-        question: "2. ما هي الصلاة التي تأتي بعد الفجر؟",
-        options: ["الظهر", "العصر", "السنن", "الشروق"],
-        correctAnswer: "الشروق"
-      },
-      {
-        question: "3. كم عدد سور القرآن الكريم؟",
-        options: ["114", "120", "112", "125"],
-        correctAnswer: "114"
-      },
-      {
-        question: "4. من هو أول خليفة للمسلمين؟",
-        options: ["أبو بكر", "عمر بن الخطاب", "عثمان بن عفان", "علي بن أبي طالب"],
-        correctAnswer: "أبو بكر"
-      },
-      {
-        question: "5. ما هي ليلة القدر؟",
-        options: ["ليلة السابع والعشرون", "ليلة الخامس والعشرون", "ليلة التاسع والعشرون", "ليلة الثلاثين"],
-        correctAnswer: "ليلة السابع والعشرون"
-      },
-      {
-        question: "6. ما هو عدد الصلوات المفروضة في اليوم والليلة؟",
-        options: ["3", "4", "5", "6"],
-        correctAnswer: "5"
-      },
-      {
-        question: "7. من هو النبي الذي أُرسل إلى بني إسرائيل؟",
-        options: ["موسى", "محمد", "إبراهيم", "عيسى"],
-        correctAnswer: "موسى"
-      }
+      { question: "1. ما هو النادي الأكثر فوزًا بالدوري السعودي؟", options: ["الهلال", "النصر", "الاتحاد", "الأهلي"], correctAnswer: "الهلال" },
+      { question: "2. من هو الهداف التاريخي للدوري السعودي؟", options: ["عماد الحوسني", "مهاجم النصر", "محمد السهلاوي", "عمر السومة"], correctAnswer: "عمر السومة" },
+      { question: "3. كم عدد فرق الدوري السعودي للمحترفين؟", options: ["14", "16", "18", "20"], correctAnswer: "16" },
+      { question: "4. ما هي أول مباراة في الدوري السعودي هذا الموسم؟", options: ["الهلال ضد الأهلي", "النصر ضد الفيصلي", "الاتحاد ضد الشباب", "الهلال ضد النصر"], correctAnswer: "الهلال ضد الأهلي" },
+      { question: "5. من هو أفضل لاعب في الدوري السعودي لهذا العام؟", options: ["سالم الدوسري", "عبدالله الحمدان", "عمر السومة", "هارون كامارا"], correctAnswer: "سالم الدوسري" },
+      { question: "6. كم عدد بطولات الهلال في الدوري السعودي؟", options: ["14", "15", "16", "17"], correctAnswer: "16" },
+      { question: "7. ما هو اسم ملعب نادي النصر؟", options: ["استاد الملك فهد", "استاد جامعة الملك سعود", "استاد الأمير فيصل", "استاد النصر"], correctAnswer: "استاد جامعة الملك سعود" }
     ];
 
     let currentQuestionIndex = 0;
@@ -90,6 +62,8 @@
 
     function showResult() {
       document.getElementById('result').textContent = `انتهت الأسئلة! درجتك: ${score} من ${questions.length}`;
+      // تخزين الدرجة في localStorage
+      localStorage.setItem('soccerScore', score);
     }
 
     displayQuestion();
