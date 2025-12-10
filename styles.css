@@ -8,50 +8,45 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* محاذاة العناصر نحو الأعلى */
+  justify-content: center;
   align-items: center;
   height: 100vh; /* تأكد من أن الصفحة تملأ الشاشة */
   line-height: 1.6;
 }
 
-/* تنسيق العنوان الرئيسي */
-header {
-  margin-top: 20px;
-  padding: 10px;
-}
-
+/* تنسيق العنوان */
 header h1 {
   color: #ff9800; /* لون برتقالي دافئ */
-  font-size: 2em; /* تصغير حجم العنوان إلى 2em */
-  margin-bottom: 10px;
+  font-size: 3.5em; /* تكبير حجم العنوان */
+  margin-bottom: 20px;
 }
 
-/* تنسيق الفقرة تحت العنوان */
-header p {
-  color: #fff;
-  font-size: 1.5em; /* تصغير حجم النص تحت العنوان */
+/* تنسيق السؤال */
+.question {
+  font-size: 3em; /* تكبير حجم السؤال */
+  font-weight: bold;
+  color: #fff; /* لون النص أبيض */
   margin-bottom: 30px;
 }
 
-/* تنسيق قائمة الروابط */
+/* تنسيق قائمة الخيارات */
 ul {
   list-style: none;
   padding: 0;
 }
 
 ul li {
-  margin: 10px 0; /* تقليل المسافة بين العناصر */
+  margin: 20px 0; /* المسافة بين الخيارات */
 }
 
 ul li a {
   display: block;
   background-color: #4caf50; /* زر أخضر هادئ */
   color: white;
-  padding: 15px; /* تقليل حجم الحواف */
-  text-decoration: none;
-  font-size: 1.8em; /* تصغير النص داخل الأزرار */
+  padding: 25px;
+  font-size: 2.5em; /* تكبير النص داخل الأزرار */
   border-radius: 12px;
-  width: 250px;
+  width: 350px;
   margin: 0 auto; /* محاذاة الأزرار إلى المركز */
   transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير عند التمرير */
 }
@@ -61,26 +56,20 @@ ul li a:hover {
   transform: scale(1.05); /* تكبير الحجم عند التمرير */
 }
 
-/* تنسيق الدرجات */
-#scores p {
-  font-size: 1.4em; /* تصغير حجم النص لعرض الدرجات */
-  margin: 10px 0;
+/* تنسيق الزر الخاص بالعودة إلى الصفحة الرئيسية */
+#backToHome {
+  margin-top: 40px;
 }
 
-/* تنسيق زر إعادة تعيين الدرجات */
-#resetButton button {
-  margin-top: 20px;
-  padding: 10px 20px; /* تصغير حجم الزر */
-  background-color: #ff9800; /* اللون البرتقالي الدافئ */
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.6em; /* تصغير حجم النص في الزر */
+#backToHome p {
+  font-size: 2em; /* تكبير النص */
+  color: #ff9800;
+  font-weight: bold;
   cursor: pointer;
 }
 
-#resetButton button:hover {
-  background-color: #fb8c00; /* اللون البرتقالي الداكن عند التمرير */
+#backToHome p:hover {
+  text-decoration: underline;
 }
 
 /* تنسيق الفوتر */
